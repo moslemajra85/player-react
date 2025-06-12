@@ -1,0 +1,23 @@
+.player {
+  max-width: 350px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), 0 1.5px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+
+.player img {
+  width: 100%;
+}
+
+.description {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.players {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
