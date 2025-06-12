@@ -1,8 +1,9 @@
 import PlayerList from './components/PlayerList';
+import Like from './components/Like';
 const App = () => {
   return (
     <div>
-      <PlayerList />
+      <Like />
     </div>
   );
 };
