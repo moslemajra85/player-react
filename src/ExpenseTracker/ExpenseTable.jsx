@@ -1,8 +1,6 @@
-const ExpenseTable = () => {
-
-
-  return (
-    <table class="table table-hover">
+const ExpenseTable = (props) => {
+   return (
+    <table className="table table-hover">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -12,18 +10,17 @@ const ExpenseTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Cake</td>
-          <td>$10</td>
-          <td>Food</td>
-          <td>
-            <button className="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Total:</td>
-          <td>$100</td>
-         </tr>
+        {props.expenses.map((expense) => (
+          <tr>
+            <td>{expense.name}</td>
+            <td>{expense.price}</td>
+            <td>{expense.category}</td>
+            <td>
+              {' '}
+              <button className="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

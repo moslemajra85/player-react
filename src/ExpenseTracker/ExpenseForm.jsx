@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 const categories = ['Food', 'Entertainment', 'Utilities'];
 
-function ExpenseForm() {
-
+function ExpenseForm(props) {
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [category, setCategory] = useState('');
@@ -20,8 +19,21 @@ function ExpenseForm() {
     setCategory(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = {
+      name,
+      price,
+      category,
+    };
+
+    props.onAddExpense(formData)
+  };
+
   return (
     <form
+      onSubmit={handleSubmit}
       className="p-4 border rounded shadow-sm bg-white"
       style={{ maxWidth: 400, margin: '2rem auto' }}
     >
